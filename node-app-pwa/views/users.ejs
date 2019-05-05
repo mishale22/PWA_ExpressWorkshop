@@ -1,0 +1,43 @@
+<% include partials/header %>
+<h1 class="container mt-5">USERS</h1>
+<table class="table container mt-5">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Id type</th>
+        <th scope="col">Id number</th>
+        <th scope="col">Active</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% usersVar.forEach( user => { %>
+        <tr>
+            <th scope="row"><img src='<%= user.photo%>' class="roundedImage" /></th>
+            <td><%= user.firstname%></td>
+            <td><%= user.lastname%></td>
+            <td><%= user.username%></td>
+            <td><%= user.idtype%></td>
+            <td><%= user.idnumber%></td>
+            <td><%= user.active%></td>
+            <td class="actions">
+            <button type="button" class="btn btn-info mr-3" onclick="location.href='/view/<%= user.idnumber%>'">Look</button>
+            <button type="button" class="btn btn-primary mr-3" onclick="location.href='/edit/<%= user.idnumber%>'">Edit</button>
+            <form class="ui del" action="/users/<%= user.idnumber%>?_method=delete" method="post">
+            <button type="submit" class="btn btn-danger"> Delete</button>
+            </form>             
+            
+            </td>
+          
+        </tr>
+        <%})%>
+    </tbody>
+  </table>
+
+<button type="button" class="btn btn-primary ml-5" onclick="location.href='/new'">Add new user</button>
+<br></br>
+<% include partials/footer %>
+

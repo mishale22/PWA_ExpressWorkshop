@@ -1,0 +1,48 @@
+<% include partials/header %>
+
+<div class="container mt-5">
+<h1>Edit User</h1>
+<form action="/edituser/?_method=put" method="post">
+
+    <div class="form-group">
+            
+            <img src='<%= userTemp.photo%>' class="bigImage ml-5" />
+            <br></br>
+        <div class="form-group">
+            <label for="firstname"><strong>First name</strong></label>
+            <input type="text" class="form-control" id="firstname" name="firstname" value="<%= userTemp.firstname%>"></div>
+          <div class="form-group">
+            <label for="lastname"><strong>Last name</strong></label>
+            <input type="text" class="form-control" id="lastname" name="lastname" value="<%= userTemp.lastname%>" placeholder="Enter last name"></div>
+          <div class="form-group">
+              <label for="username"><strong>Username</strong></label>
+              <input type="text" class="form-control" id="username" name="username" value="<%= userTemp.username%>" placeholder="Enter username"></div>
+          <div class="form-group">
+              <label for="idtype"><strong>Id type</strong></label>
+              <select class="form-control" id="idtype" name="idtype" value="<%= userTemp.idtype%>" placeholder="Select id type">
+              <option>CC</option>
+              <option>TI</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="idnumber"><strong>Id number</strong></label>
+              <input type="text" class="form-control" id="idnumber" name="idnumber" value="<%= userTemp.idnumber%>" placeholder="Enter id number" readonly></div>
+          <div class="form-group">
+            <label for="password1"><strong>Password</strong></label>
+            <input type="password" class="form-control" id="password1" name="password1" value="<%= userTemp.password%>" placeholder="Enter password">
+          </div>
+          <div class="form-group">
+              <label for="photo"><strong>Photo (url)</strong></label>
+              <input type="text" class="form-control" id="photo" name="photo" value="<%= userTemp.photo%>" placeholder="Enter url photo"></div>
+          <div class="form-group">
+              <label for="active"><strong>Active</strong></label>
+              <select class="form-control" id="active" name="active" value="<%= userTemp.active%>" placeholder="Select activeness">
+              <option>Yes</option>
+              <option>No</option>
+              </select>
+          </div>
+          
+<button type="submit" class="btn btn-primary">Edit user</button>
+</form>
+</div>
+<% include partials/footer %>

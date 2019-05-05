@@ -1,0 +1,35 @@
+<% include partials/header %>
+
+
+<div class="container mt-5">
+<h1>User</h1>  
+<form method="get">
+        <img src='<%= userTemp.photo%>' class="bigImage ml-5" />
+        <br></br>
+        <div class="form-group">
+                <label for="firstname"><strong>First name</strong></label>
+                <input type="text" class="form-control" id="firstname" name="firstname" value="<%= userTemp.firstname%>" readonly></div>
+              <div class="form-group">
+                <label for="lastname"><strong>Last name</strong></label>
+                <input type="text" class="form-control" id="lastname" name="lastname" value="<%= userTemp.lastname%>" readonly></div>
+              <div class="form-group">
+                  <label for="username"><strong>Username</strong></label>
+                  <input type="text" class="form-control" id="username" name="username" value="<%= userTemp.username%>" readonly></div>
+              <div class="form-group">
+                  <label for="idtype"><strong>Id type</strong></label>
+                  <input type="text" class="form-control" id="idtype" name="idtype" value="<%= userTemp.idtype%>" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="idnumber"><strong>Id number</strong></label>
+                  <input type="text" class="form-control" id="idnumber" name="idnumber" value="<%= userTemp.idnumber%>" readonly></div>
+              <div class="form-group">
+                <label for="password1"><strong>Password</strong></label>
+                <input type="password" class="form-control" id="password1" name="password1" value="<%= userTemp.password%>" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="active"><strong>Active</strong></label>
+                  <input type="text" class="form-control" id="active" name="active" value="<%= userTemp.active%>" readonly>
+              </div>     
+</form>
+</div>
+<% include partials/footer %>
